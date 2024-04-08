@@ -1,7 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World!</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .output {
+      font-weight: bold;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div class="container">
+    <h1>Hello World!</h1>
+    <p>Enter your name below:</p>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <p class="output" id="output"></p>
+  </div>
+  <script>
+    const nameInput = document.getElementById('nameInput');
+    const output = document.getElementById('output');
+
+    nameInput.addEventListener('keyup', () => {
+      const name = nameInput.value;
+      output.textContent = `Hello ${name}`;
+    });
+  </script>
 </body>
 </html>
